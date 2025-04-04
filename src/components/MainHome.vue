@@ -11,9 +11,9 @@
       <div class="slider">
         <button class="arrow left">&lt;</button>
         <div class="items">
-          <img src="https://via.placeholder.com/150" alt="Item 1" />
-          <img src="https://via.placeholder.com/150" alt="Item 2" />
-          <img src="https://via.placeholder.com/150" alt="Item 3" />
+          <img src="" alt="Item 1" />
+          <img src="" alt="Item 2" />
+          <img src="" alt="Item 3" />
         </div>
         <button class="arrow right">&gt;</button>
       </div>

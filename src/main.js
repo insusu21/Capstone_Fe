@@ -1,4 +1,8 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router'; // 라우터 임포트
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+app.use(router); // 라우터 추가
+app.mount('#app'); // HTML의 #app 요소에 마운트

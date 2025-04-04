@@ -1,4 +1,5 @@
 <template>
+  <div class="login-container">
     <div class="login-box">
       <h2>로그인</h2>
       <form @submit.prevent="login">
@@ -21,7 +22,9 @@
         <button type="submit" class="login-button">로그인</button>
       </form>
     </div>
+  </div>
 </template>
+
 
 <script>
 export default {
@@ -71,10 +74,17 @@ export default {
 
 <style scoped>
 
-
 /* 로그인 박스 */
-.login-box {
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px); /* 헤더와 푸터 높이를 제외한 영역 */
   background-color: #f5f5f5;
+}
+
+.login-box {
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
