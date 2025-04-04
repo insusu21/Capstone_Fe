@@ -80,10 +80,12 @@ export default {
 
 .login-btn {
   background-color: #f0f0f0; /* 로그인 버튼 색상 */
+  cursor: pointer;
 }
 
 .signup-btn {
   background-color: #b22222; /* 회원가입 버튼 색상 */
+  cursor: pointer;
   color: white;
 }
 

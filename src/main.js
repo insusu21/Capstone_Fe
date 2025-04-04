@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router'; // 라우터 임포트
-import store from './store/store'; // Vuex store 임포트
+import store from './store/index'; // Vuex store 임포트
 
 const app = createApp(App);
 

@@ -37,37 +37,38 @@ export default {
   },
   methods: {
   async login() {
-    if (!this.email || !this.password) {
-      alert('이메일과 비밀번호를 입력해주세요.');
-      return;
+  if (!this.email || !this.password) {
+    alert('이메일과 비밀번호를 입력해주세요.');
+    return;
+  }
+
+  try {
+    const response = await fetch('https://your-server.com/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: this.email,
+        password: this.password,
+        rememberMe: this.rememberMe,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error('아이디 또는 비밀번호가 잘못되었습니다.');
     }
 
-    try {
-      // 예: 서버로 POST 요청 보내기
-      const response = await fetch('1', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: this.email,
-          password: this.password,
-          rememberMe: this.rememberMe,
-        }),
-      });
+    const data = await response.json();
+    alert('로그인 성공!');
 
-      if (!response.ok) {
-        throw new Error('로그인 실패');
-      }
+    // Vuex 상태 업데이트
+    this.$store.commit('login', data);
 
-      const data = await response.json();
-      alert('로그인 성공!');
-      console.log(data); // 받은 데이터 처리
-
-      // 예: 로그인 성공 후 페이지 이동
-      // this.$router.push('/dashboard');
-    } catch (error) {
-      alert(error.message || '로그인 중 문제가 발생했습니다.');
-        }
-    },
+    // 메인 홈페이지로 이동
+    this.$router.push('/');
+  } catch (error) {
+    alert(error.message || '로그인 중 문제가 발생했습니다.');
+    }
+  }
   },
 };
 </script>
