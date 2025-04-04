@@ -80,7 +80,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 120px); /* 헤더와 푸터 높이를 제외한 영역 */
+  height: 690px; /* 헤더와 푸터 높이를 제외한 영역 */
   background-color: #f5f5f5;
 }
 
@@ -90,7 +90,7 @@ export default {
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px;
+  width: 350px;
 }
 
 /* 제목 */
