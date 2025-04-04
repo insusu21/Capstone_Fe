@@ -1,24 +1,34 @@
 <template>
-  <div id="app" style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f5f5f5;">
-    <LoginView />
+  <div id="app">
+    <TempHeader />
+    <div class="main-content">
+      <LoginView />
+    </div>
+    <TempFooter />
   </div>
 </template>
 
 <script>
+import TempHeader from './components/TempHeader.vue';
+import TempFooter from './components/TempFooter.vue';
 import LoginView from './components/LoginView.vue';
 
 export default {
   name: 'App',
   components: {
+    TempHeader,
+    TempFooter,
     LoginView,
   },
 };
 </script>
 
 <style>
-/* 기본 스타일 */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+/* 메인 컨텐츠 스타일 */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px); /* 헤더와 푸터 높이를 제외한 영역 */
 }
 </style>
